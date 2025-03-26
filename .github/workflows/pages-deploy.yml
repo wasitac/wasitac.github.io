@@ -44,8 +44,8 @@ jobs:
 
           # 2. 이미지 파일을 assets/img로 복사
           mkdir -p assets/img
-          cp -r _posts_content/img/* assets/img/
-          
+          cp -r _posts_content/assets/img/* assets/img/
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
