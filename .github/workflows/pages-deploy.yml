@@ -35,11 +35,17 @@ jobs:
           # If using the 'assets' git submodule from Chirpy Starter, uncomment above
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
 
-      - name: Copy posts from submodule
+      - name: Copy posts and images from submodule
         run: |
+          # 1. _posts 폴더 정리 후 .md 파일 복사
           rm -rf _posts
-          cp -r _posts_content _posts
+          mkdir -p _posts
+          cp -r _posts_content/posts/*.md _posts/
 
+          # 2. 이미지 파일을 assets/img로 복사
+          mkdir -p assets/img
+          cp -r _posts_content/img/* assets/img/
+          
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
