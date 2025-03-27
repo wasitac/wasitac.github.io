@@ -37,6 +37,9 @@ jobs:
           submodules: true
           # If using the 'assets' git submodule from Chirpy Starter, uncomment above
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
+          
+      - name: Update submodule to latest commit
+        run: git submodule update --remote --merge
 
       - name: Copy posts and images from submodule
         run: |
